@@ -1,5 +1,4 @@
-
-const { command } = require('yargs');
+#!/usr/bin/env node
 const yargs = require('yargs');
 const {addNote, removeNote, listNotes, readNote} = require('./notes')
 

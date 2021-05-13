@@ -1,4 +1,6 @@
+const os = require('os');
 const fs = require('fs');
+const path = require('path')
 const chalk = require('chalk');
 
 const addNote = (title, body) => {
@@ -52,8 +54,10 @@ const readNote = (title) => {
 }
 
 const loadNotes = () => {
+    const homedir = os.homedir();
+    const folderName = path.join(homedir, 'notesapp')
     try{
-        const dataBuffer = fs.readFileSync('notes.json')
+        const dataBuffer = fs.readFileSync(path.join(folderName, 'notes.json'))
         const noteJSON = dataBuffer.toString()
         const notes = JSON.parse(noteJSON)
         return notes
@@ -63,8 +67,19 @@ const loadNotes = () => {
 }
 
 const saveNotes = (notes) => {
+    const homedir = os.homedir();
+    const folderName = path.join(homedir, 'notesapp')
+    try{
+        if(!fs.existsSync(folderName)){
+            fs.mkdirSync(folderName)
+            console.log(chalk.green(`New file create at ${folderName}`));
+        }
+    } catch (err) {
+        console.error(err)
+    }
     const notesJSON = JSON.stringify(notes)
-    fs.writeFileSync('notes.json', notesJSON)
+    fs.writeFileSync(path.join(folderName, 'notes.json'), notesJSON)
+    
 }
 
 
