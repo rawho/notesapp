@@ -1,5 +1,5 @@
 {
-  "name": "notesapp",
+  "name": "notesap",
   "version": "1.0.0",
   "description": "A simple note taking command line tool",
   "main": "app.js",
