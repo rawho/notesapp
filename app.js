@@ -1,3 +1,4 @@
+
 const { command } = require('yargs');
 const yargs = require('yargs');
 const {addNote, removeNote, listNotes, readNote} = require('./notes')
