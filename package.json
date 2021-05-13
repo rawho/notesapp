@@ -1,6 +1,6 @@
 {
   "name": "notesap",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A simple note taking command line tool",
   "main": "app.js",
   "bin": "app.js",

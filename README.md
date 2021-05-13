@@ -1,5 +1,7 @@
 # Notesap
 
+![videos](videos/notesap.gif)
+
 ## Installation
 using npm: 
 
